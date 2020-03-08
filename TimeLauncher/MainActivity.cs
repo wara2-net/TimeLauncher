@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Widget;
 using System;
+using static Android.App.ActivityManager;
 
 namespace TimeLauncher
 {
@@ -49,6 +50,26 @@ namespace TimeLauncher
             btn_showSelectTime.Click += btn_showSelectTime_Click;
             btn_showSelectApp.Click += Btn_showSelectApp_Click;
             btn_launch.Click += Btn_launch_Click;
+
+            // テスト用
+            imageView.Click += ImageView_Click;
+        }
+
+        private void ImageView_Click(object sender, EventArgs e)
+        {
+            // permission android.permission.KILL_BACKGROUND_PROCESSES が必要
+            ActivityManager am = (ActivityManager)this.GetSystemService(ActivityService);
+            var rplist = am.RunningAppProcesses;
+
+            foreach (var rp in rplist)
+            {
+                if (rp.ProcessName.Contains(launchApp_pkgName))
+                {
+                    Android.OS.Process.SendSignal(rp.Pid, Signal.Kill);
+                    am.KillBackgroundProcesses(launchApp_pkgName);
+                }
+            }
+            am.KillBackgroundProcesses("net.wara2.timelauncher");
         }
 
         private void Btn_showSelectApp_Click(object sender, EventArgs e)
