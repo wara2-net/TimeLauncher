@@ -1,0 +1,49 @@
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="(no select)"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="335.5dp"
+        android:layout_height="45dp"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:layout_marginRight="0.0dp" />
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_toRightOf="@id/textView1"
+        android:id="@+id/appIcon" />
+    <Button
+        android:text="アプリ選択"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_showSelectApp"
+        android:layout_below="@+id/appIcon" />
+    <TextView
+        android:text="00:00:00"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_showSelectApp"
+        android:id="@+id/textView2"
+        android:gravity="center_horizontal"/>
+    <Button
+        android:text="時刻指定"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_showSelectTime"
+        android:layout_below="@+id/textView2" />
+    <Button
+        android:text="アプリ起動"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btn_showSelectTime"
+        android:id="@+id/btn_Launch" />
+
+</RelativeLayout>

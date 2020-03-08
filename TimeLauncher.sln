@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLauncher", "TimeLauncher\TimeLauncher.csproj", "{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62BAA9A8-5CB2-4C61-92FA-24A2488279BF}
+	EndGlobalSection
+EndGlobal
