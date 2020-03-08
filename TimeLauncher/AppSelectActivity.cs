@@ -22,7 +22,7 @@ namespace TimeLauncher
             // Create your application here
             SetContentView(Resource.Layout.AppSelect);
 
-            // アプリ一覧を取得
+            // アプリ一覧を取得 参考：
             // http://furuya02.hatenablog.com/entry/20140528/1401224919
             var mainIntent = new Intent(Intent.ActionMain, null);
             mainIntent.AddCategory(Intent.CategoryLauncher);
