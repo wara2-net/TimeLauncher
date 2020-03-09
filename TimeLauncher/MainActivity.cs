@@ -7,7 +7,6 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Widget;
 using System;
-using static Android.App.ActivityManager;
 
 namespace TimeLauncher
 {
@@ -18,6 +17,7 @@ namespace TimeLauncher
         string launchApp_LabelName;
         string launchApp_className;
         string launchApp_pkgName;
+        private MyReceiver myReceiver = new MyReceiver();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -50,27 +50,28 @@ namespace TimeLauncher
             btn_showSelectTime.Click += btn_showSelectTime_Click;
             btn_showSelectApp.Click += Btn_showSelectApp_Click;
             btn_launch.Click += Btn_launch_Click;
-
-            // テスト用
-            imageView.Click += ImageView_Click;
         }
 
-        private void ImageView_Click(object sender, EventArgs e)
+        protected override void OnPause()
         {
-            // permission android.permission.KILL_BACKGROUND_PROCESSES が必要
-            ActivityManager am = (ActivityManager)this.GetSystemService(ActivityService);
-            var rplist = am.RunningAppProcesses;
+            base.OnPause();
 
-            foreach (var rp in rplist)
-            {
-                if (rp.ProcessName.Contains(launchApp_pkgName))
-                {
-                    Android.OS.Process.SendSignal(rp.Pid, Signal.Kill);
-                    am.KillBackgroundProcesses(launchApp_pkgName);
-                }
-            }
-            am.KillBackgroundProcesses("net.wara2.timelauncher");
+            //http://y-anz-m.blogspot.com/2011/08/androidkeygurad.html
+            IntentFilter f = new IntentFilter();
+            f.AddAction(Intent.ActionUserPresent);
+            //f.AddAction(Intent.ActionScreenOn);
+            //f.AddAction(Intent.ActionScreenOff);
+            RegisterReceiver(myReceiver, f);
         }
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            if (myReceiver.IsOrderedBroadcast) {
+                UnregisterReceiver(myReceiver);
+            }
+        }
+        
 
         private void Btn_showSelectApp_Click(object sender, EventArgs e)
         {
@@ -175,5 +176,21 @@ namespace TimeLauncher
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
+    }
+
+
+    public class MyReceiver : BroadcastReceiver
+    {
+        public override void OnReceive(Context context, Intent intent)
+        {
+            string action = intent.Action;
+
+            if(action == Intent.ActionUserPresent)
+            {
+                //ロック解除イベント発生時、アプリを起動(前面に表示)させる
+                Toast.MakeText(context, "ロック解除のイベント検知", ToastLength.Short).Show();
+                context.StartActivity(typeof(MainActivity));
+            }
+        }
     }
 }
