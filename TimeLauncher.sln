@@ -8,12 +8,16 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		RealSPRelease|Any CPU = RealSPRelease|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.RealSPRelease|Any CPU.ActiveCfg = RealSPRelease|Any CPU
+		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.RealSPRelease|Any CPU.Build.0 = RealSPRelease|Any CPU
+		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.RealSPRelease|Any CPU.Deploy.0 = RealSPRelease|Any CPU
 		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.Release|Any CPU.Build.0 = Release|Any CPU
 		{42D4FD47-B0A4-4890-82CA-FFEC3140CA00}.Release|Any CPU.Deploy.0 = Release|Any CPU

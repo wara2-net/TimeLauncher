@@ -26,6 +26,7 @@ namespace TimeLauncher
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
+            // アイコンの取得先 https://www.iconfinder.com/iconsets/moe-moe-icons
             //保存した情報を読み取り、メンバに保存
             var saveTime = this.GetSharedPreferences("app", FileCreationMode.Private);
             launchApp_LabelName = saveTime.GetString("LabelName", "(起動するアプリが選択されていません)");
