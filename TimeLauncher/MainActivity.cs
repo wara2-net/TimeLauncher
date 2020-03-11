@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Widget;
 using System;
+using Xamarin.Essentials;
 
 namespace TimeLauncher
 {
@@ -60,19 +61,27 @@ namespace TimeLauncher
             //http://y-anz-m.blogspot.com/2011/08/androidkeygurad.html
             IntentFilter f = new IntentFilter();
             f.AddAction(Intent.ActionUserPresent);
-            //f.AddAction(Intent.ActionScreenOn);
-            //f.AddAction(Intent.ActionScreenOff);
             RegisterReceiver(myReceiver, f);
         }
         protected override void OnResume()
         {
             base.OnResume();
 
-            if (myReceiver.IsOrderedBroadcast) {
+            if (myReceiver.IsOrderedBroadcast)
+            {
                 UnregisterReceiver(myReceiver);
             }
         }
-        
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            if (myReceiver.IsOrderedBroadcast)
+            {
+                UnregisterReceiver(myReceiver);
+            }
+        }
+
 
         private void Btn_showSelectApp_Click(object sender, EventArgs e)
         {
@@ -86,6 +95,14 @@ namespace TimeLauncher
             // 時刻の比較
             if (DateTime.Now.TimeOfDay < displayTime.TimeOfDay)
             {
+                try
+                {
+                    Vibration.Vibrate();
+                }
+                catch (FeatureNotSupportedException)
+                {
+                    // バイブしてもしなくても影響はないので例外を無視
+                }
                 Toast.MakeText(this, "まだ時間になっていません", ToastLength.Short).Show();
                 return;
             }
