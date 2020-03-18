@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Widget;
 using System;
+using System.Timers;
 using Xamarin.Essentials;
 
 namespace TimeLauncher
@@ -19,6 +20,8 @@ namespace TimeLauncher
         string launchApp_className;
         string launchApp_pkgName;
         private MyReceiver myReceiver = new MyReceiver();
+        private Timer timer;
+        private bool timer_Notice_finish;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -52,6 +55,41 @@ namespace TimeLauncher
             btn_showSelectTime.Click += btn_showSelectTime_Click;
             btn_showSelectApp.Click += Btn_showSelectApp_Click;
             btn_launch.Click += Btn_launch_Click;
+
+            // 指定した時刻で通知するタイマの初期化
+            timer_Notice_finish = false;
+            timer = new Timer(1000)
+            {
+                Enabled = true
+            };
+            timer.Elapsed += Timer_Elapsed;
+            timer.Start();
+        }
+
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            // 現在時刻と指定時刻の差分(指定時刻超過でプラスになる)
+            TimeSpan ts = DateTime.Now.TimeOfDay - displayTime.TimeOfDay;
+
+            Console.WriteLine(ts.ToString());
+            if (ts < new TimeSpan(0, 0, 0))
+            {
+                timer_Notice_finish = false;
+            }
+            if (!timer_Notice_finish && ts >= new TimeSpan(0, 0, 0) && ts < new TimeSpan(0, 0, 5) )
+            {
+                timer_Notice_finish = true;
+                // timerでToastを呼ぶのは相性悪いっぽい(実行されない)。Toastの次のtryに行く前に終わる
+                //Toast.MakeText(this, "指定時刻です", ToastLength.Short).Show();
+                try
+                {
+                    Vibration.Vibrate(1000);
+                }
+                catch (FeatureNotSupportedException)
+                {
+                    //何もしない例外処理
+                }
+            }
         }
 
         protected override void OnPause()
@@ -80,6 +118,8 @@ namespace TimeLauncher
             {
                 UnregisterReceiver(myReceiver);
             }
+
+            timer.Stop();
         }
 
 
