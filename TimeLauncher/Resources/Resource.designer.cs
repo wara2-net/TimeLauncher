@@ -15,7 +15,7 @@ namespace TimeLauncher
 {
 	
 	
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
 	public partial class Resource
 	{
 		
@@ -3730,95 +3730,131 @@ namespace TimeLauncher
 			// aapt resource value: 0x7F0800A8
 			public const int text2 = 2131230888;
 			
-			// aapt resource value: 0x7F0800AF
-			public const int textinput_counter = 2131230895;
-			
-			// aapt resource value: 0x7F0800B0
-			public const int textinput_error = 2131230896;
-			
-			// aapt resource value: 0x7F0800B1
-			public const int textinput_helper_text = 2131230897;
-			
 			// aapt resource value: 0x7F0800A9
-			public const int textSpacerNoButtons = 2131230889;
-			
-			// aapt resource value: 0x7F0800AA
-			public const int textSpacerNoTitle = 2131230890;
-			
-			// aapt resource value: 0x7F0800AB
-			public const int textStart = 2131230891;
-			
-			// aapt resource value: 0x7F0800AC
-			public const int textView1 = 2131230892;
-			
-			// aapt resource value: 0x7F0800AD
-			public const int textView2 = 2131230893;
-			
-			// aapt resource value: 0x7F0800AE
-			public const int text_input_password_toggle = 2131230894;
-			
-			// aapt resource value: 0x7F0800B2
-			public const int time = 2131230898;
-			
-			// aapt resource value: 0x7F0800B3
-			public const int timePicker1 = 2131230899;
-			
-			// aapt resource value: 0x7F0800B4
-			public const int title = 2131230900;
-			
-			// aapt resource value: 0x7F0800B5
-			public const int titleDividerNoCustom = 2131230901;
+			public const int textAccount = 2131230889;
 			
 			// aapt resource value: 0x7F0800B6
-			public const int title_template = 2131230902;
+			public const int textinput_counter = 2131230902;
 			
 			// aapt resource value: 0x7F0800B7
-			public const int top = 2131230903;
+			public const int textinput_error = 2131230903;
 			
 			// aapt resource value: 0x7F0800B8
-			public const int topPanel = 2131230904;
+			public const int textinput_helper_text = 2131230904;
+			
+			// aapt resource value: 0x7F0800AA
+			public const int textMailSetting = 2131230890;
+			
+			// aapt resource value: 0x7F0800AB
+			public const int textMailTo = 2131230891;
+			
+			// aapt resource value: 0x7F0800AC
+			public const int textPass = 2131230892;
+			
+			// aapt resource value: 0x7F0800AD
+			public const int textPort = 2131230893;
+			
+			// aapt resource value: 0x7F0800AE
+			public const int textSMTP = 2131230894;
+			
+			// aapt resource value: 0x7F0800AF
+			public const int textSpacerNoButtons = 2131230895;
+			
+			// aapt resource value: 0x7F0800B0
+			public const int textSpacerNoTitle = 2131230896;
+			
+			// aapt resource value: 0x7F0800B1
+			public const int textStart = 2131230897;
+			
+			// aapt resource value: 0x7F0800B2
+			public const int textTimerSetting = 2131230898;
+			
+			// aapt resource value: 0x7F0800B3
+			public const int textView1 = 2131230899;
+			
+			// aapt resource value: 0x7F0800B4
+			public const int textView2 = 2131230900;
+			
+			// aapt resource value: 0x7F0800B5
+			public const int text_input_password_toggle = 2131230901;
 			
 			// aapt resource value: 0x7F0800B9
-			public const int touch_outside = 2131230905;
+			public const int time = 2131230905;
 			
 			// aapt resource value: 0x7F0800BA
-			public const int transition_current_scene = 2131230906;
+			public const int timePicker1 = 2131230906;
 			
 			// aapt resource value: 0x7F0800BB
-			public const int transition_layout_save = 2131230907;
+			public const int title = 2131230907;
 			
 			// aapt resource value: 0x7F0800BC
-			public const int transition_position = 2131230908;
+			public const int titleDividerNoCustom = 2131230908;
 			
 			// aapt resource value: 0x7F0800BD
-			public const int transition_scene_layoutid_cache = 2131230909;
+			public const int title_template = 2131230909;
 			
 			// aapt resource value: 0x7F0800BE
-			public const int transition_transform = 2131230910;
+			public const int top = 2131230910;
 			
 			// aapt resource value: 0x7F0800BF
-			public const int uniform = 2131230911;
+			public const int topPanel = 2131230911;
 			
 			// aapt resource value: 0x7F0800C0
-			public const int unlabeled = 2131230912;
+			public const int touch_outside = 2131230912;
 			
 			// aapt resource value: 0x7F0800C1
-			public const int up = 2131230913;
+			public const int transition_current_scene = 2131230913;
 			
 			// aapt resource value: 0x7F0800C2
-			public const int useLogo = 2131230914;
+			public const int transition_layout_save = 2131230914;
 			
 			// aapt resource value: 0x7F0800C3
-			public const int view_offset_helper = 2131230915;
+			public const int transition_position = 2131230915;
 			
 			// aapt resource value: 0x7F0800C4
-			public const int visible = 2131230916;
+			public const int transition_scene_layoutid_cache = 2131230916;
 			
 			// aapt resource value: 0x7F0800C5
-			public const int withText = 2131230917;
+			public const int transition_transform = 2131230917;
 			
 			// aapt resource value: 0x7F0800C6
-			public const int wrap_content = 2131230918;
+			public const int txtAccount = 2131230918;
+			
+			// aapt resource value: 0x7F0800C7
+			public const int txtMailTo = 2131230919;
+			
+			// aapt resource value: 0x7F0800C8
+			public const int txtPass = 2131230920;
+			
+			// aapt resource value: 0x7F0800C9
+			public const int txtPort = 2131230921;
+			
+			// aapt resource value: 0x7F0800CA
+			public const int txtSmtp = 2131230922;
+			
+			// aapt resource value: 0x7F0800CB
+			public const int uniform = 2131230923;
+			
+			// aapt resource value: 0x7F0800CC
+			public const int unlabeled = 2131230924;
+			
+			// aapt resource value: 0x7F0800CD
+			public const int up = 2131230925;
+			
+			// aapt resource value: 0x7F0800CE
+			public const int useLogo = 2131230926;
+			
+			// aapt resource value: 0x7F0800CF
+			public const int view_offset_helper = 2131230927;
+			
+			// aapt resource value: 0x7F0800D0
+			public const int visible = 2131230928;
+			
+			// aapt resource value: 0x7F0800D1
+			public const int withText = 2131230929;
+			
+			// aapt resource value: 0x7F0800D2
+			public const int wrap_content = 2131230930;
 			
 			static Id()
 			{
